@@ -11905,7 +11905,7 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Find-Waldo-in-Linear-Time">Find Waldo in Linear Time<a class="anchor-link" href="#Find-Waldo-in-Linear-Time">&#182;</a></h1><h2 id="Fast-Ship-Detection-Through-kNN">Fast Ship Detection Through kNN<a class="anchor-link" href="#Fast-Ship-Detection-Through-kNN">&#182;</a></h2><h2 id="and-Moving-Standardized-Cross-Correlation">and Moving Standardized Cross-Correlation<a class="anchor-link" href="#and-Moving-Standardized-Cross-Correlation">&#182;</a></h2><h3 id="Abdulrahman-A.-Althobaiti">Abdulrahman A. Althobaiti<a class="anchor-link" href="#Abdulrahman-A.-Althobaiti">&#182;</a></h3>
+<h1 id="Fast-Ship-Detection">Fast Ship Detection<a class="anchor-link" href="#Fast-Ship-Detection">&#182;</a></h1><h2 id="Through-kNN-and-Rolling-Standardized-Cross-Correlation">Through kNN and Rolling Standardized Cross-Correlation<a class="anchor-link" href="#Through-kNN-and-Rolling-Standardized-Cross-Correlation">&#182;</a></h2><h3 id="Abdulrahman-A.-Althobaiti">Abdulrahman A. Althobaiti<a class="anchor-link" href="#Abdulrahman-A.-Althobaiti">&#182;</a></h3>
 </div>
 </div>
 </div></section></section><section><section>
@@ -11914,14 +11914,11 @@ a.anchor-link {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Outline">Outline<a class="anchor-link" href="#Outline">&#182;</a></h1><ul>
-<li>Problem Description</li>
-<li>Related Work</li>
-<li>Main Idea</li>
-<li>Contribution</li>
-<li>Dataset</li>
-<li>Performance Measure</li>
-<li>Results</li>
-<li>Conclusion</li>
+<li>Airbus Ship Dataset</li>
+<li>2D Cross-Correlation - Historical Approach</li>
+<li>Exploiting Marginal Distributions</li>
+<li>Finding Similar Margins</li>
+<li>Rolling Standardized Cross-Correlation</li>
 </ul>
 
 </div>
@@ -11931,99 +11928,7 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Problem-Description">Problem Description<a class="anchor-link" href="#Problem-Description">&#182;</a></h1><p><img src="PD.png" alt="title"></p>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Related-Work">Related Work<a class="anchor-link" href="#Related-Work">&#182;</a></h1>
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Template-Matching-(2D-Cross-Correlation)">Template Matching (2D Cross-Correlation)<a class="anchor-link" href="#Template-Matching-(2D-Cross-Correlation)">&#182;</a></h2><p><img src="TM.png" alt="title"></p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Feature-Matching-(SIFT)">Feature Matching (SIFT)<a class="anchor-link" href="#Feature-Matching-(SIFT)">&#182;</a></h2><p><img src="SIFT.jpeg" alt="title"></p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Image-Segmentation-(Haar-Wavelets)">Image Segmentation (Haar Wavelets)<a class="anchor-link" href="#Image-Segmentation-(Haar-Wavelets)">&#182;</a></h2><p><img src="HAAR.png" alt="title"></p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Deep-Learning-(U-Net)">Deep Learning (U-Net)<a class="anchor-link" href="#Deep-Learning-(U-Net)">&#182;</a></h2><p><img src="UNET.png" alt="title"></p>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Main-Idea">Main Idea<a class="anchor-link" href="#Main-Idea">&#182;</a></h1><p><img src="MI.png" alt="title"></p>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Contribution">Contribution<a class="anchor-link" href="#Contribution">&#182;</a></h1>
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>Zero effort training kNN = Fast.</li>
-<li>Does not require a lot of training examples.</li>
-<li>Not too complex to reason about.</li>
-</ul>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="rolling.png" alt="title"></p>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Dataset">Dataset<a class="anchor-link" href="#Dataset">&#182;</a></h1><h3 id="Enough-Waldo,-Let's-Get-Real">Enough Waldo, Let's Get Real<a class="anchor-link" href="#Enough-Waldo,-Let's-Get-Real">&#182;</a></h3>
+<h1 id="Airbus-Ship-Dataset">Airbus Ship Dataset<a class="anchor-link" href="#Airbus-Ship-Dataset">&#182;</a></h1>
 </div>
 </div>
 </div></section><section>
@@ -12071,7 +11976,7 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Pre-Processing-Example">Pre-Processing Example<a class="anchor-link" href="#Pre-Processing-Example">&#182;</a></h1>
+<h1 id="2D-Cross-Correlation">2D Cross-Correlation<a class="anchor-link" href="#2D-Cross-Correlation">&#182;</a></h1>
 </div>
 </div>
 </div></section><section>
@@ -12079,7 +11984,8 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="S1.png" alt="title"></p>
+<p>Finding a small template in a larger one, search space is $O((n+m)^2)$</p>
+<p><img src="step1.png" alt="title"></p>
 
 </div>
 </div>
@@ -12088,7 +11994,8 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="S2.png" alt="title"></p>
+<p>Finding a small template in a larger one, search space is $O((n+m)^2)$</p>
+<p><img src="step11.png" alt="title"></p>
 
 </div>
 </div>
@@ -12097,21 +12004,8 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="S3.png" alt="title"></p>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Performance-Measure">Performance Measure<a class="anchor-link" href="#Performance-Measure">&#182;</a></h1><p><img src="IOU.png" alt="title"></p>
-<p>$$IOU = \frac{T \cap P}{T \cup P}$$</p>
-<p>$$ recall = \frac{T \cap P}{T} $$</p>
-<p>$$ precision = \frac{T \cap P}{P} $$</p>
-<p>$$ F_2 = \frac{1}{|thresholds|} \sum_{t \in thresholds} \frac{(1+2^2) TP(t)}{(1+2^2)TP(t) + 2^2 FN(t) + FP(t)} $$</p>
-<p>This $F_2$ score provide more emphasis for recall compared to precision.</p>
+<p>Finding a small template in a larger one, search space is $O((n+m)^2)$</p>
+<p><img src="laststep.png" alt="title"></p>
 
 </div>
 </div>
@@ -12120,7 +12014,7 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Results">Results<a class="anchor-link" href="#Results">&#182;</a></h1>
+<h1 id="Exploiting-Marginal-Distributions">Exploiting Marginal Distributions<a class="anchor-link" href="#Exploiting-Marginal-Distributions">&#182;</a></h1>
 </div>
 </div>
 </div></section><section>
@@ -12128,6 +12022,44 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>A colored (RGB) picture can be transformed to a black and white image.</li>
+<li>Once normalized, we can consider it as a joint probability distribution.</li>
+</ul>
+<p><img src="black_and_white.png" alt="title"></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>From a joint distribution, we can obtain the marginal distributions.</li>
+<li>The search space is now $O(n)$.</li>
+</ul>
+<p><img src="margins.png" alt="title"></p>
+<ul>
+<li>The marginals should sum to 1, but they are normalized in the picture.</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Finding-Similar-Margins-(kNN)">Finding Similar Margins (kNN)<a class="anchor-link" href="#Finding-Similar-Margins-(kNN)">&#182;</a></h1>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Due to normalization and values close to zero, the 'Canberra' metric has a better performance in this task.</p>
 <p><img src="metrics.png" alt="title"></p>
 
 </div>
@@ -12137,21 +12069,8 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>Using the 'Canberra' distance, we find the best k=1.</p>
 <p><img src="bestk.png" alt="title"></p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="While-Testing-...">While Testing ...<a class="anchor-link" href="#While-Testing-...">&#182;</a></h2><p>Testing on $1200$ and Training on $4800$</p>
-<p>Accuracy: $92.583\%$</p>
-<p>Average precision: $0.9925618$.
-Average recall: $0.98736534$.</p>
-<p>Average false positive rate: $0.00735$.
-Average false negative rate: $0.0125$.</p>
 
 </div>
 </div>
@@ -12160,10 +12079,56 @@ Average false negative rate: $0.0125$.</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">&#182;</a></h1><ul>
-<li>While the appraoch is Naïve, it has potential.</li>
-<li>It lacks probabilistic inference.</li>
-<li>The existence of the object is implied. (What if there is no Waldo)</li>
+<h1 id="Rolling-Standardized-Cross-Correlation">Rolling Standardized Cross-Correlation<a class="anchor-link" href="#Rolling-Standardized-Cross-Correlation">&#182;</a></h1>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="What-is-the-rolling-standardized-cross-correlation">What is the rolling standardized cross-correlation<a class="anchor-link" href="#What-is-the-rolling-standardized-cross-correlation">&#182;</a></h3><p><img src="rolling.png" alt="title"></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Why-is-it-important?">Why is it important?<a class="anchor-link" href="#Why-is-it-important?">&#182;</a></h3><ul>
+<li>Given a known template, we can compute the cross-correlation over the margins.</li>
+<li>The x and y coordinates are given through $argmax$ of the cross-correlation.</li>
+</ul>
+<p><img src="prediction.png" alt="title"></p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Summary">Summary<a class="anchor-link" href="#Summary">&#182;</a></h1><ul>
+<li>To locate objects in images, we consider the marginal distributions.</li>
+</ul>
+<ul>
+<li>Given the marginal distributions, we can find the closest known template.</li>
+</ul>
+<ul>
+<li>The Canberra distance is a better performer for normalized vectors and sensitive to values close to zero.</li>
+</ul>
+<ul>
+<li>The rolling standardized cross-correlation proved to be robust against noise.</li>
+</ul>
+<ul>
+<li>A 10 fold cross validation, scored an error rate of $13$%.</li>
+</ul>
+<ul>
+<li>The accuracy of this framework over 4800 training images and 1200 testing images is $91.42$%.</li>
+</ul>
+<ul>
+<li>We believe the accuracy can be improved through a careful investigation of the correlation values of the nearest neighbours.</li>
 </ul>
 
 </div>
