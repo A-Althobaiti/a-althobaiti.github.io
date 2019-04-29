@@ -12002,11 +12002,20 @@ a.anchor-link {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>Zero effort training kNN = Fast.</li>
+<li><strong>Solving the cross-correlation implementation problem</strong></li>
+<li>Lazy training kNN = Fast.</li>
 <li>Does not require a lot of training examples.</li>
 <li>Not too complex to reason about.</li>
 </ul>
 
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="The-Cross-Correlation-Implementation-Problem">The Cross-Correlation Implementation Problem<a class="anchor-link" href="#The-Cross-Correlation-Implementation-Problem">&#182;</a></h1>
 </div>
 </div>
 </div></section><section>
@@ -12015,6 +12024,26 @@ a.anchor-link {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><img src="rolling.png" alt="title"></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$$ \rho(X, Y) = \frac{Cov(X, Y)}{\lVert X \rVert \lVert Y \rVert} $$</p>
+<p>The goal is to set $ \lVert X \rVert = \lVert Y \rVert = 1$</p>
+<p>So that computing the "sample covariance" $ Cov(X, Y) $ is enough</p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="fw.png" alt="title"></p>
 
 </div>
 </div>
@@ -12128,7 +12157,7 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="metrics.png" alt="title"></p>
+<h2 id="Example-of-Margins">Example of Margins<a class="anchor-link" href="#Example-of-Margins">&#182;</a></h2><p><img src="margins.png" alt="title"></p>
 
 </div>
 </div>
@@ -12137,7 +12166,25 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="bestk.png" alt="title"></p>
+<h2 id="Example-of-Prediction">Example of Prediction<a class="anchor-link" href="#Example-of-Prediction">&#182;</a></h2><p><img src="prediction.png" alt="title"></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Distance-Metrics-kNN">Distance Metrics kNN<a class="anchor-link" href="#Distance-Metrics-kNN">&#182;</a></h2><p><img src="metrics.png" alt="title"></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Performance">Performance<a class="anchor-link" href="#Performance">&#182;</a></h2><p><img src="bestk.png" alt="title"></p>
 
 </div>
 </div>
